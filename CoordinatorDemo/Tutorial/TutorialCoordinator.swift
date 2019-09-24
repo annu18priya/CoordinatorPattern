@@ -6,4 +6,19 @@
 //  Copyright © 2019 annpriya. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+public final class TutorialCoordinator: Coordinator {
+    private let navigationController: UINavigationController
+    
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    public func start() {
+        let tutorialVC = TutorialViewController.instantiate()
+        navigationController.pushViewController(tutorialVC, animated: true)
+    }
+    
+    
+}

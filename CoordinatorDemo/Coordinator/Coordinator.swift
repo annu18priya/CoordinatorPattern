@@ -6,4 +6,8 @@
 //  Copyright © 2019 annpriya. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+public protocol Coordinator {
+    func start()
+}
