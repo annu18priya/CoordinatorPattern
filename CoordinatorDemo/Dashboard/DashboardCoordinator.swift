@@ -12,13 +12,15 @@ public final class DashboardCoordinator: Coordinator {
     
     private let navigationController: UINavigationController
     
+    var tabCoordinator: MainTabCoordinator?
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     public func start() {
        let dashBoardVC = DashboardViewController.instantiate(with: "Dashboard")
-        self.navigationController.navigationBar.isHidden = false
+       self.navigationController.navigationBar.isHidden = false
        dashBoardVC.doNavigation = doNavigation
        navigationController.pushViewController(dashBoardVC, animated: true)
     }
@@ -26,7 +28,14 @@ public final class DashboardCoordinator: Coordinator {
     private func doNavigation(tappedText: String) {
         let dashboardDetailVC = DashboardDetailViewController.instantiate(with: "Dashboard")
         dashboardDetailVC.str = tappedText
+        dashboardDetailVC.navigateToTabController = navigateToTabController
         navigationController.pushViewController(dashboardDetailVC, animated: true)
+    }
+    
+    private func navigateToTabController() {
+        let tabCoordinator = TabCoordinator(with: navigationController)
+        tabCoordinator.start()
+        UIWindow().rootViewController = navigationController
     }
 
 

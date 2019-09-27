@@ -8,10 +8,10 @@
 
 import UIKit
 
-public final class AppCoordinator: Coordinator {
+public class AppCoordinator: Coordinator {
     
     private let window: UIWindow
-    private let rootViewController: UINavigationController
+    public let rootViewController: UINavigationController
     private let tutorialCoordinator: TutorialCoordinator?
     
     init(window: UIWindow) {

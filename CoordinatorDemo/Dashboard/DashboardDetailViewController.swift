@@ -10,12 +10,17 @@ import UIKit
 
 class DashboardDetailViewController: UIViewController, Storyboarded {
     
+    internal var navigateToTabController: () -> Void = { }
     public var str: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         debugPrint(str)
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction private func btnTapped(_ sender: UIButton) {
+       navigateToTabController()
     }
 
 }

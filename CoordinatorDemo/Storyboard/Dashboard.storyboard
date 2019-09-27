@@ -45,7 +45,20 @@
                     <view key="view" contentMode="scaleToFill" id="58S-sw-6Rh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEz-eR-kW6">
+                                <rect key="frame" x="184" y="438" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btnTapped:" destination="Qve-jX-Wb0" eventType="touchUpInside" id="l6B-DY-o8J"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wEz-eR-kW6" firstAttribute="centerX" secondItem="9wk-59-cq9" secondAttribute="centerX" id="kRo-uO-Smv"/>
+                            <constraint firstItem="wEz-eR-kW6" firstAttribute="centerY" secondItem="9wk-59-cq9" secondAttribute="centerY" id="pEd-10-sxW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9wk-59-cq9"/>
                     </view>
                 </viewController>
