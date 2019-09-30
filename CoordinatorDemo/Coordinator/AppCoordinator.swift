@@ -8,16 +8,24 @@
 
 import UIKit
 
+/// NOTE : We need to initialise all the let property if not then declare that variable as var.
+
 public class AppCoordinator: Coordinator {
-    
     private let window: UIWindow
     public let rootViewController: UINavigationController
-    private let tutorialCoordinator: TutorialCoordinator?
+    private var tutorialCoordinator: TutorialCoordinator?
+    private var mainCoordinator: MainCoordinator?
     
     init(window: UIWindow) {
         self.window = window
         rootViewController = UINavigationController()
-        tutorialCoordinator = TutorialCoordinator(navigationController: rootViewController)
+        
+        if LocalStorage.getIsFirstTimeLaunched() {
+            mainCoordinator = MainCoordinator(with: rootViewController)
+            mainCoordinator?.navigateToTabController()
+        } else {
+            tutorialCoordinator = TutorialCoordinator(navigationController: rootViewController)
+        }
     }
     
     public func start() {

@@ -22,4 +22,10 @@ public class MainTabCoordinator: Coordinator {
     public func start() {
         /// Empty declaration for now.
     }
+    
+    public func navigateToTabController() {
+        let tabCoordinator = TabCoordinator(with: navigationController)
+        tabCoordinator.start()
+        UIWindow().rootViewController = navigationController
+    }
 }

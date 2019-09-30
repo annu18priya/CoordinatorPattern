@@ -33,6 +33,7 @@ public final class DashboardCoordinator: Coordinator {
     }
     
     private func navigateToTabController() {
+        LocalStorage.setIsFirstTimeLaunched()
         let tabCoordinator = TabCoordinator(with: navigationController)
         tabCoordinator.start()
         UIWindow().rootViewController = navigationController
