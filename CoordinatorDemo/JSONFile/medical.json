@@ -1,0 +1,141 @@
+{
+
+    "status": "success",
+
+    "payload": {
+
+        "data": [
+
+            {
+
+                "timeSlot": 1569286800000,
+
+                "timeSlotDetails": [
+
+                    {
+
+                        "medicationLogID": null,
+
+                        "medicationPrescriptionTimeID": 592,
+
+                        "medicationPrescriptionID": 271,
+
+                        "prescriptionID": 269,
+
+                        "medicineID": 2388,
+
+                        "medicineName": "Femstat",
+
+                        "startTime": 1569286800000,
+
+                        "endTime": 1569294000000,
+
+                        "quantity": 1,
+
+                        "status": "Scheduled"
+
+                    }
+
+                ]
+
+            },
+
+            {
+
+                "timeSlot": 1569308400000,
+
+                "timeSlotDetails": [
+
+                    {
+
+                        "medicationLogID": 4675,
+
+                        "medicationPrescriptionTimeID": 595,
+
+                        "medicationPrescriptionID": 272,
+
+                        "prescriptionID": 270,
+
+                        "medicineID": 980,
+
+                        "medicineName": "Captopril",
+
+                        "startTime": 1569308400000,
+
+                        "endTime": 1569315600000,
+
+                        "quantity": 2,
+
+                        "status": "Taken"
+
+                    },
+
+                    {
+
+                        "medicationLogID": null,
+
+                        "medicationPrescriptionTimeID": 593,
+
+                        "medicationPrescriptionID": 271,
+
+                        "prescriptionID": 269,
+
+                        "medicineID": 2388,
+
+                        "medicineName": "Femstat",
+
+                        "startTime": 1569308400000,
+
+                        "endTime": 1569315600000,
+
+                        "quantity": 1,
+
+                        "status": "Scheduled"
+
+                    }
+
+                ]
+
+            },
+
+            {
+
+                "timeSlot": 1569326400000,
+
+                "timeSlotDetails": [
+
+                    {
+
+                        "medicationLogID": null,
+
+                        "medicationPrescriptionTimeID": 594,
+
+                        "medicationPrescriptionID": 271,
+
+                        "prescriptionID": 269,
+
+                        "medicineID": 2388,
+
+                        "medicineName": "Femstat",
+
+                        "startTime": 1569326400000,
+
+                        "endTime": 1569333600000,
+
+                        "quantity": 2,
+
+                        "status": "Scheduled"
+
+                    }
+
+                ]
+
+            }
+
+        ]
+
+    },
+
+    "exception": {}
+
+}
