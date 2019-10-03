@@ -15,6 +15,9 @@
 		156938D32345D514006462DA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156938D22345D514006462DA /* Network.swift */; };
 		156938D52345D9D6006462DA /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156938D42345D9D6006462DA /* NetworkMethod.swift */; };
 		156938D72345D9E4006462DA /* NetworkEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156938D62345D9E4006462DA /* NetworkEndPoint.swift */; };
+		156938E72345F6CB006462DA /* Main+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156938E62345F6CB006462DA /* Main+Resource.swift */; };
+		156938E92345F6D7006462DA /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156938E82345F6D7006462DA /* Main.swift */; };
+		156938EC2345FD36006462DA /* JSONDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156938EB2345FD36006462DA /* JSONDictionary.swift */; };
 		157C9E452339E981007441F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C9E442339E981007441F8 /* AppDelegate.swift */; };
 		157C9E4C2339E982007441F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 157C9E4B2339E982007441F8 /* Assets.xcassets */; };
 		157C9E4F2339E982007441F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 157C9E4D2339E982007441F8 /* LaunchScreen.storyboard */; };
@@ -59,6 +62,9 @@
 		156938E12345ECA8006462DA /* QA.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QA.xcconfig; sourceTree = "<group>"; };
 		156938E22345EF6C006462DA /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		156938E32345EF80006462DA /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
+		156938E62345F6CB006462DA /* Main+Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main+Resource.swift"; sourceTree = "<group>"; };
+		156938E82345F6D7006462DA /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		156938EB2345FD36006462DA /* JSONDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDictionary.swift; sourceTree = "<group>"; };
 		157C9E412339E981007441F8 /* CoordinatorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoordinatorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		157C9E442339E981007441F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		157C9E4B2339E982007441F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +127,7 @@
 		156938D02345D4B6006462DA /* WebService */ = {
 			isa = PBXGroup;
 			children = (
+				156938EA2345FD22006462DA /* Core */,
 				156938D12345D505006462DA /* Network */,
 			);
 			path = WebService;
@@ -145,6 +152,31 @@
 				156938E32345EF80006462DA /* Production.xcconfig */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		156938E42345F67E006462DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				156938E52345F692006462DA /* Main */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		156938E52345F692006462DA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				156938E82345F6D7006462DA /* Main.swift */,
+				156938E62345F6CB006462DA /* Main+Resource.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		156938EA2345FD22006462DA /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				156938EB2345FD36006462DA /* JSONDictionary.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		157C9E382339E981007441F8 = {
@@ -174,6 +206,7 @@
 				156938CD2345D432006462DA /* JSONFile */,
 				15127BCE233C978C0079C22C /* TabBarController */,
 				157C9E672339EB27007441F8 /* Helper */,
+				156938E42345F67E006462DA /* Model */,
 				157C9E642339E9AC007441F8 /* Coordinator */,
 				157C9E6C2339ED6A007441F8 /* Tutorial */,
 				15B13E6D233B42A400395384 /* Dashboard */,
@@ -386,11 +419,14 @@
 			files = (
 				157C9E452339E981007441F8 /* AppDelegate.swift in Sources */,
 				15B13E84233B658900395384 /* MainViewController.swift in Sources */,
+				156938E92345F6D7006462DA /* Main.swift in Sources */,
 				157C9E6F2339ED6A007441F8 /* TutorialViewController.swift in Sources */,
+				156938E72345F6CB006462DA /* Main+Resource.swift in Sources */,
 				15127BD4233CB2C10079C22C /* MainTabCoordinator.swift in Sources */,
 				15127BD0233C97BE0079C22C /* TabBarController.swift in Sources */,
 				157C9E662339E9C0007441F8 /* Coordinator.swift in Sources */,
 				15B13E7E233B63A400395384 /* MainCoordinator.swift in Sources */,
+				156938EC2345FD36006462DA /* JSONDictionary.swift in Sources */,
 				15B13E86233B659700395384 /* SettingViewController.swift in Sources */,
 				157C9E712339ED8B007441F8 /* TutorialCoordinator.swift in Sources */,
 				157C9E692339EB36007441F8 /* Storyboarded.swift in Sources */,

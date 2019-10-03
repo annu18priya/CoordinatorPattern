@@ -15,7 +15,14 @@ class MainViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .gray
+        loadData()
     }
     
+    
+    private func loadData() {
+        Main.fetch { (_ main: Main?, _ error: Error?) in
+            debugPrint(main?.payloadJSON)
+        }
+    }
 
 }

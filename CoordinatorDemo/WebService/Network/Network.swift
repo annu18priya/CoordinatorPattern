@@ -12,9 +12,9 @@ import UIKit
 public typealias NetworkRouterCompletion = (_ data: Data?, _ error: Error?) -> ()
 
 protocol NetworkRouter: class {
-    func apiRequest(method: ) -> <#return type#> {
-    <#function body#>
-    }
+//    func apiRequest(method: ) -> <#return type#> {
+//    <#function body#>
+//    }
 }
 
 
