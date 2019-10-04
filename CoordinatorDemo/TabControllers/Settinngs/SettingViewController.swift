@@ -14,7 +14,6 @@ class SettingViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
     }
 
 }

@@ -21,6 +21,7 @@ public final class TabBarController: UITabBarController {
         mainCoordinator.currentController?.tabBarItem = UITabBarItem(title: "Main",
                                                                   image: nil,
                                                                   tag: 11)
+        mainCoordinator.start()
         
         let settingsNavController = UINavigationController()
         let settingsCoordinator = SettingsCoordinator(with: settingsNavController)
@@ -28,6 +29,7 @@ public final class TabBarController: UITabBarController {
         settingsCoordinator.currentController?.tabBarItem = UITabBarItem(title: "Settings",
                                                                      image: nil,
                                                                      tag: 12)
+        settingsCoordinator.start()
         
         viewControllers = [
             mainCoordinator.currentController!,

@@ -14,15 +14,15 @@ public class AppCoordinator: Coordinator {
     private let window: UIWindow
     public let rootViewController: UINavigationController
     private var tutorialCoordinator: TutorialCoordinator?
-    private var mainCoordinator: MainCoordinator?
+    private var mainTabCoordinator: MainTabCoordinator?
     
     init(window: UIWindow) {
         self.window = window
         rootViewController = UINavigationController()
         
         if LocalStorage.getIsFirstTimeLaunched() {
-            mainCoordinator = MainCoordinator(with: rootViewController)
-            mainCoordinator?.navigateToTabController()
+            mainTabCoordinator = MainTabCoordinator(with: rootViewController) //MainCoordinator(with: rootViewController)
+            mainTabCoordinator?.navigateToTabController()
         } else {
             tutorialCoordinator = TutorialCoordinator(navigationController: rootViewController)
         }

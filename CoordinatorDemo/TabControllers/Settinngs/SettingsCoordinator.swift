@@ -15,7 +15,7 @@ public final class SettingsCoordinator: MainTabCoordinator {
     
     override init(with navigationController: UINavigationController) {
         super.init(with: navigationController)
-        currentController = SettingViewController()
+        currentController = SettingViewController.instantiate(with: "Tabbar")
         currentController?.coordinator = self
         childCoordinators.append(self)
     }

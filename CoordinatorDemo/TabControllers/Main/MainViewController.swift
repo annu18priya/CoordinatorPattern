@@ -10,22 +10,33 @@ import UIKit
 
 class MainViewController: UIViewController, Storyboarded {
     
+    /// Using Closure
+    internal var doNavigation: ((Main) -> Void) = { _ in }
+    
     weak var coordinator: MainCoordinator?
+    private var mainObj: Main?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .gray
         loadData()
     }
     
     
     private func loadData() {
-        Main.fetch { (_ main: Main?, _ error: Error?) in
+        Main.fetch { [weak self] (_ main: Main?, _ error: Error?) in
             debugPrint(">>>> : \(main?.dataPayload.count)")
             debugPrint(">>>> : \(main?.dataPayload[0].timeSlot)")
             debugPrint(">>>> : \(main?.dataPayload[0].timeSlotDetails.count)")
             debugPrint(">>>> : \(main?.dataPayload[0].timeSlotDetails[0].medicineName)")
+            self?.mainObj = main
         }
     }
 
+    /// Click Event
+    
+    @IBAction private func btnTapped(_ sender: UIButton) {
+        guard let main = mainObj else { fatalError() }
+        doNavigation(main)
+    }
+    
 }
