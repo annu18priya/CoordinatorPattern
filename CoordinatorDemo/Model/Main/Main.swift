@@ -17,35 +17,47 @@ public enum Status: String {
 
 
 public struct Main {
-    let payloadJSON: [String: Any]?
-}
-
-public struct Payload {
+    public let payloadJSON: [String: Any]?    
     public var dataPayload: [DataPayload] = [DataPayload]()
-    
-    //    public enum CodingKeys: String, CodingKey {
-    //        case data = "data"
-    //    }
-    
-    
 }
-
 
 public struct DataPayload {
+    public var timeSlot: Int?
     public var timeSlotDetails: [TimeSlotDetails] = [TimeSlotDetails]()
-    
-    //    public enum CodingKeys: String, CodingKey {
-    //        case timeSlotDetails = "timeSlotDetails"
-    //    }
 }
 
 public struct TimeSlotDetails {
     public let medicineName: String?
-    public let status: Status = .Unknown
+    public var status: Status = .Unknown
 }
 
 extension Main {
     public init(json: JSONDictionary) throws {
-        payloadJSON = json["payload"] as? [String: Any]        
+        payloadJSON = json["payload"] as? [String: Any]
+        let dataJSON = payloadJSON?["data"] as? [JSONDictionary]
+        
+        try dataJSON?.forEach { data in
+           let payLoad = try DataPayload(json: data)
+           dataPayload.append(payLoad)
+        }
+    }
+}
+
+extension DataPayload {
+    public init(json: JSONDictionary) throws {
+        timeSlot = json["timeSlot"] as? Int
+        let timeSlotJSON = json["timeSlotDetails"] as? [JSONDictionary]
+        try timeSlotJSON?.forEach { timeSlot in
+            let timeSlotDetail = try TimeSlotDetails(json: timeSlot)
+            timeSlotDetails.append(timeSlotDetail)
+        }
+//        timeSlotDetails =  timeSlotJSON.map { try TimeSlotDetails(json: $0) }
+    }
+}
+
+extension TimeSlotDetails {
+    public init(json: JSONDictionary) throws {
+        medicineName = json["medicineName"] as? String
+        status = Status(rawValue: (json["status"] as? String)!) ?? Status(rawValue: "")!
     }
 }

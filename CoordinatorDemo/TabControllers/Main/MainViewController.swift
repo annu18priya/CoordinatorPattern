@@ -21,7 +21,10 @@ class MainViewController: UIViewController, Storyboarded {
     
     private func loadData() {
         Main.fetch { (_ main: Main?, _ error: Error?) in
-            debugPrint(main?.payloadJSON)
+            debugPrint(">>>> : \(main?.dataPayload.count)")
+            debugPrint(">>>> : \(main?.dataPayload[0].timeSlot)")
+            debugPrint(">>>> : \(main?.dataPayload[0].timeSlotDetails.count)")
+            debugPrint(">>>> : \(main?.dataPayload[0].timeSlotDetails[0].medicineName)")
         }
     }
 
