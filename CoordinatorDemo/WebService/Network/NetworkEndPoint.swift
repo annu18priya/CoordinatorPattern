@@ -24,8 +24,6 @@ private enum NetworkEndPoint: String {
             return "k3"
         case .develop:
             return "k4"
-        default:
-            ()
         }
     }
     
@@ -39,8 +37,6 @@ private enum NetworkEndPoint: String {
             return "url3"
         case .develop:
             return "url4"
-        default:
-            ()
         }
     }
 }

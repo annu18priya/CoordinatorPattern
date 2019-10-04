@@ -26,6 +26,6 @@ public class MainTabCoordinator: Coordinator {
     public func navigateToTabController() {
         let tabCoordinator = TabCoordinator(with: navigationController)
         tabCoordinator.start()
-        UIWindow().rootViewController = navigationController
+        UIApplication.shared.keyWindow?.rootViewController = navigationController
     }
 }

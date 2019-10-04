@@ -18,20 +18,20 @@ public final class MainCoordinator: MainTabCoordinator {
     override init(with navigationController: UINavigationController) {
         super.init(with: navigationController)
         currentController = MainViewController.instantiate(with: "Tabbar")
+        currentController?.doNavigation = doNavigation
         currentController?.coordinator = self
         childCoordinators.append(self)
     }
     
     public override func start() {
-        let mainVC = MainViewController.instantiate(with: "Tabbar")
-        mainVC.doNavigation = doNavigation
-        navigationController.pushViewController(mainVC, animated: true)
+        /// Empty Declaration
     }
     
     public func doNavigation(mainObj: Main) {
         let mainDetailVC = MainDetailViewController.instantiate(with: "Tabbar")
         mainDetailVC.mainObj = mainObj
-        navigationController.pushViewController(mainDetailVC, animated: true)
+        let navController = UIApplication.shared.keyWindow?.rootViewController as! UINavigationController
+        navController.pushViewController(mainDetailVC, animated: true)
     }
 
 }
