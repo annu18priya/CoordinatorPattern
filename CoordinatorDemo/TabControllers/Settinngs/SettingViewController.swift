@@ -16,4 +16,9 @@ class SettingViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
     }
 
+    /// MARK :- API Calling.
+    
+    private func callApi() {
+        
+    }
 }
