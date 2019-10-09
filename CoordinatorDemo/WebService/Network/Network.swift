@@ -29,15 +29,15 @@ public enum HTTPStatusCode: Int {
     }
 }
 
-public typealias NetworkRouterCompletion = ((_ data: Data?, _ statusCode: HTTPStatusCode?) -> Void)
+public typealias NetworkRouterCompletion = (_ data: Data?, _ statusCode: HTTPStatusCode?) -> ()
 
 protocol NetworkRouter: class {
-    func apiRequest(method: HTTPMethod, apiURL: String, parameters: [String: Any], headers: [String: String], completion: @escaping NetworkRouterCompletion)
+    func apiRequest(_ method: HTTPMethod, _ apiURL: String, _ parameters: [String: Any], _ headers: [String: String], completion: @escaping NetworkRouterCompletion)
 }
 
 class NetworkManager: NetworkRouter {
     
-    public func apiRequest(method: HTTPMethod, apiURL: String, parameters: [String: Any], headers: [String: String], completion: @escaping NetworkRouterCompletion) {
+    public func apiRequest(_ method: HTTPMethod, _ apiURL: String, _ parameters: [String: Any], _ headers: [String: String], completion: @escaping NetworkRouterCompletion) {
         
         /// Create a default configuration
         let defaultSessionConfiguration = URLSessionConfiguration.default
@@ -48,6 +48,7 @@ class NetworkManager: NetworkRouter {
         
         // Create dataTask
         defaultSession.dataTask(with: urlRequest) { (data, response, error) in
+            
             
             // We still pass back the status code whether we use the cache or not
             let validStatusCode = (response as? HTTPURLResponse)?.statusCode ?? (error?._code ?? HTTPStatusCode.unreachable.rawValue)

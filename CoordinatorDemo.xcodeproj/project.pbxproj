@@ -38,8 +38,6 @@
 		15B13E82233B641000395384 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B13E81233B641000395384 /* TabCoordinator.swift */; };
 		15B13E84233B658900395384 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B13E83233B658900395384 /* MainViewController.swift */; };
 		15B13E86233B659700395384 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B13E85233B659700395384 /* SettingViewController.swift */; };
-		15D7BD55234B134700FFF43B /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D7BD54234B134700FFF43B /* WebService.swift */; };
-		15D7BD57234B14A100FFF43B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D7BD56234B14A100FFF43B /* Result.swift */; };
 		15D7BD5A234B3CA200FFF43B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D7BD59234B3CA200FFF43B /* Settings.swift */; };
 		15D7BD5C234B3CB100FFF43B /* Settings+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D7BD5B234B3CB100FFF43B /* Settings+Resource.swift */; };
 /* End PBXBuildFile section */
@@ -94,8 +92,6 @@
 		15B13E81233B641000395384 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		15B13E83233B658900395384 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		15B13E85233B659700395384 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		15D7BD54234B134700FFF43B /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
-		15D7BD56234B14A100FFF43B /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		15D7BD59234B3CA200FFF43B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		15D7BD5B234B3CB100FFF43B /* Settings+Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings+Resource.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,7 +145,6 @@
 				156938D22345D514006462DA /* Network.swift */,
 				156938D42345D9D6006462DA /* NetworkMethod.swift */,
 				156938D62345D9E4006462DA /* NetworkEndPoint.swift */,
-				15D7BD54234B134700FFF43B /* WebService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -255,7 +250,6 @@
 			children = (
 				15BA3467233DF3CE007A9AF3 /* LocalStorage */,
 				157C9E682339EB36007441F8 /* Storyboarded.swift */,
-				15D7BD56234B14A100FFF43B /* Result.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -454,8 +448,6 @@
 				156938EC2345FD36006462DA /* JSONDictionary.swift in Sources */,
 				15B13E86233B659700395384 /* SettingViewController.swift in Sources */,
 				157C9E712339ED8B007441F8 /* TutorialCoordinator.swift in Sources */,
-				15D7BD55234B134700FFF43B /* WebService.swift in Sources */,
-				15D7BD57234B14A100FFF43B /* Result.swift in Sources */,
 				157C9E692339EB36007441F8 /* Storyboarded.swift in Sources */,
 				157C9E732339F39C007441F8 /* AppCoordinator.swift in Sources */,
 				156938D52345D9D6006462DA /* NetworkMethod.swift in Sources */,
@@ -511,7 +503,7 @@
 /* Begin XCBuildConfiguration section */
 		157C9E5C2339E982007441F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 156938E02345EBC5006462DA /* Debug.xcconfig */;
+			baseConfigurationReference = 156938E12345ECA8006462DA /* QA.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

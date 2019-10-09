@@ -17,26 +17,26 @@ private enum NetworkEndPoint: String {
     var apiKey: String {
         switch self {
         case .prod:
-            return "k1"
+            return "AIzaSyDtYvnVdeEPcO4-cEOGePbfOl7qMVKAYrU"
         case .staging:
-            return "k2"
+            return "AIzaSyDtYvnVdeEPcO4-cEOGePbfOl7qMVKAYrU"
         case .qa:
-            return "k3"
+            return "AIzaSyDtYvnVdeEPcO4-cEOGePbfOl7qMVKAYrU"
         case .develop:
-            return "k4"
+            return "AIzaSyDtYvnVdeEPcO4-cEOGePbfOl7qMVKAYrU"
         }
     }
     
     var apiURL: String {
         switch self {
         case .prod:
-            return "ur1"
+            return "https://maps.googleapis.com/maps/api/place/textsearch/json?"
         case .staging:
-            return "url2"
+            return "https://maps.googleapis.com/maps/api/place/textsearch/json?"
         case .qa:
-            return "url3"
+            return "https://maps.googleapis.com/maps/api/place/textsearch/json?"
         case .develop:
-            return "url4"
+            return "https://maps.googleapis.com/maps/api/place/textsearch/json?"
         }
     }
 }
@@ -57,7 +57,7 @@ public struct AppConfiguration {
         let enviorment = NetworkEndPoint.develop
         #endif
         
-        var apiUrlString = enviorment.rawValue
+        var apiUrlString = enviorment.apiURL
         let apiUrl = URL(string: apiUrlString)!
         return AppConfiguration(apiURL: apiUrl, apiKey: enviorment.apiKey, enviornment: enviorment)
     }()

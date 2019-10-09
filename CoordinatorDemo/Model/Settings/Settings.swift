@@ -9,7 +9,7 @@
 import Foundation
 
 public struct ResultsData {
-    let results: [Results]
+    var results: [Results] = [Results]()
 }
 
 public struct Results {
@@ -26,3 +26,37 @@ public struct Location {
     let lat: Double?
     let lng: Double?
 }
+
+extension ResultsData {
+    public init(json: JSONDictionary) throws {
+        let resultsJSON = json["results"] as? [JSONDictionary]
+        try resultsJSON?.forEach { result in
+           let resultValue = try Results(json: result)
+           results.append(resultValue)
+        }
+    }
+}
+
+extension Results {
+    public init(json: JSONDictionary) throws {
+        formattedAddress = json["formattedAddress"] as? String
+        name = json["name"] as? String
+        geometry = try Geometry(json: json["geometry"] as! JSONDictionary)
+    }
+
+}
+
+extension Geometry {
+    public init(json: JSONDictionary) throws {
+       location = try Location(json: json["location"] as! JSONDictionary)
+    }
+}
+
+extension Location {
+    public init(json: JSONDictionary) throws {
+        lat = json["formattedAddress"] as? Double
+        lng = json["name"] as? Double
+    }
+}
+
+

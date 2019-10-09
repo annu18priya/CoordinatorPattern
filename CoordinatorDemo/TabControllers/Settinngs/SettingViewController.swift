@@ -14,11 +14,15 @@ class SettingViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        callApi()
     }
 
     /// MARK :- API Calling.
     
     private func callApi() {
-        
+        ResultsData().fetch(queryValue: "restaurant", location: "25.5941,85.1376", radius: 10000) { (resultData, httpStatusCode) in
+            debugPrint(">>>>>> :\(resultData.results[0].formattedAddress)")
+            debugPrint(">>>>>> :\(httpStatusCode)")
+        }
     }
 }
