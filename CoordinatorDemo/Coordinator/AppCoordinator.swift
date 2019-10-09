@@ -13,6 +13,8 @@ import UIKit
 public class AppCoordinator: Coordinator {
     private let window: UIWindow
     public let rootViewController: UINavigationController
+    
+    /// Declare Coordinator object which can be loaded depending on condition type.
     private var tutorialCoordinator: TutorialCoordinator?
     private var mainTabCoordinator: MainTabCoordinator?
     
@@ -20,14 +22,16 @@ public class AppCoordinator: Coordinator {
         self.window = window
         rootViewController = UINavigationController()
         
+        /// checking for if app is launched, if yes then change the root of Coordinator to TabController class Coordinator. Otherwise set root to tutorialCoordinator only.
         if LocalStorage.getIsFirstTimeLaunched() {
-            mainTabCoordinator = MainTabCoordinator(with: rootViewController) //MainCoordinator(with: rootViewController)
+            mainTabCoordinator = MainTabCoordinator(with: rootViewController)
             mainTabCoordinator?.navigateToTabController()
         } else {
             tutorialCoordinator = TutorialCoordinator(navigationController: rootViewController)
         }
     }
     
+    /// Set window rootController to navigationController.
     public func start() {
         window.rootViewController = rootViewController
         tutorialCoordinator?.start()

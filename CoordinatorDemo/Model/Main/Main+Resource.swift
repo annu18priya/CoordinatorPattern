@@ -10,8 +10,10 @@ import Foundation
 
 extension Main {
     
+    /// declared typelias for reponse data
     typealias main = (_ main: Main?, _ error: Error?) -> Void
     
+    /// EndPoints contains endpoint details for various server.
     public enum EndPoints: String {
         #if PRODUCTION
         case root = "p1"

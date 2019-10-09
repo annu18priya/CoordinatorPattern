@@ -23,6 +23,7 @@ public class MainTabCoordinator: Coordinator {
         /// Empty declaration for now.
     }
     
+    /// Changing AppDelegate rootController to tabbar controller roots as after first successful launch root is changed for app.
     public func navigateToTabController() {
         let tabCoordinator = TabCoordinator(with: navigationController)
         tabCoordinator.start()

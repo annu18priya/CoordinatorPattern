@@ -92,6 +92,7 @@
 		15B13E81233B641000395384 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		15B13E83233B658900395384 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		15B13E85233B659700395384 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		15CC2A29234E0B9F0085D7B3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		15D7BD59234B3CA200FFF43B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		15D7BD5B234B3CB100FFF43B /* Settings+Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings+Resource.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +190,7 @@
 		157C9E382339E981007441F8 = {
 			isa = PBXGroup;
 			children = (
+				15CC2A29234E0B9F0085D7B3 /* README.md */,
 				157C9E432339E981007441F8 /* CoordinatorDemo */,
 				156938DE2345EB81006462DA /* Resources */,
 				157C9E582339E982007441F8 /* CoordinatorDemoTests */,

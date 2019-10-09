@@ -73,9 +73,11 @@ class NetworkManager: NetworkRouter {
         }.resume()
     }
     
-    private func createURLRequest(method: HTTPMethod, apiURL: String, parameters: [String: Any]?, headers: [String: String]) -> URLRequest {
+    private func createURLRequest(method: HTTPMethod, apiURL: String?, parameters: [String: Any]?, headers: [String: String]) -> URLRequest {
         
-        var request = URLRequest(url: URL(string: apiURL)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 60.0)
+        guard let url = apiURL else { fatalError() }
+        
+        var request = URLRequest(url: URL(string: url)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 60.0)
         request.httpMethod = method.rawValue
         request.allHTTPHeaderFields = headers
         

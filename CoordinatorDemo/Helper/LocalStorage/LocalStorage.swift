@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Declare key for UserDefaults here and and use it using enum raw value.
 public enum StorgaeKey: String {
     case isFirstTimeLaunched = "isFirstTimeLaunched"
 }
