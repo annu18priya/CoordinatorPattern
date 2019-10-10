@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// Error defined with Status Code.
 public enum HTTPStatusCode: Int {
     case success = 200
     case unreachable = -1009
@@ -75,13 +76,15 @@ class NetworkManager: NetworkRouter {
     
     private func createURLRequest(method: HTTPMethod, apiURL: String?, parameters: [String: Any]?, headers: [String: String]) -> URLRequest {
         
-        guard let url = apiURL else { fatalError() }
+        /// Since source URL contains whitespace in URL, so adding percent encoding to make URL proper.
+        guard let url = apiURL?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) else { fatalError() }
         
         var request = URLRequest(url: URL(string: url)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 60.0)
         request.httpMethod = method.rawValue
         request.allHTTPHeaderFields = headers
         
-        if let params = parameters {
+        /// parameters is used for POST Request.
+        if let params = parameters, !(parameters?.values.isEmpty)! {
             let postData = (try? JSONSerialization.data(withJSONObject: params, options: []))
             request.httpBody = postData
         }

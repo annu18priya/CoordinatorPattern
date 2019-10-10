@@ -24,10 +24,10 @@ class MainViewController: UIViewController, Storyboarded {
     
     private func loadData() {
         Main.fetch { [weak self] (_ main: Main?, _ error: Error?) in
-            debugPrint(">>>> : \(main?.dataPayload.count)")
-            debugPrint(">>>> : \(main?.dataPayload[0].timeSlot)")
-            debugPrint(">>>> : \(main?.dataPayload[0].timeSlotDetails.count)")
-            debugPrint(">>>> : \(main?.dataPayload[0].timeSlotDetails[0].medicineName)")
+//            debugPrint(">>>> : \(main?.dataPayload.count)")
+//            debugPrint(">>>> : \(main?.dataPayload[0].timeSlot)")
+//            debugPrint(">>>> : \(main?.dataPayload[0].timeSlotDetails.count)")
+//            debugPrint(">>>> : \(main?.dataPayload[0].timeSlotDetails[0].medicineName)")
             self?.mainObj = main
         }
     }
