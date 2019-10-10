@@ -14,8 +14,6 @@ class DashboardViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction private func btnTapped(_ sender: UIButton) {

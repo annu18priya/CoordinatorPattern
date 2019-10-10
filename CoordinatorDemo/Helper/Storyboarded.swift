@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Declare protocol to get Storyboard ViewController by passing the name of the storyboard.
 protocol Storyboarded {
     static func instantiate(with storyBoardName: String) -> Self
 }
