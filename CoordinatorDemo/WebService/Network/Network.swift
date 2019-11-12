@@ -33,19 +33,19 @@ public enum HTTPStatusCode: Int {
 public typealias NetworkRouterCompletion = (_ data: Data?, _ statusCode: HTTPStatusCode?) -> ()
 
 protocol NetworkRouter: class {
-    func apiRequest(_ method: HTTPMethod, _ apiURL: String, _ parameters: [String: Any], _ headers: [String: String], completion: @escaping NetworkRouterCompletion)
+    func apiRequest(_ method: HTTPMethod, _ apiURL: String, _ parameters: [String: Any], _ queryItem: [URLQueryItem], _ headers: [String: String], completion: @escaping NetworkRouterCompletion)
 }
 
 class NetworkManager: NetworkRouter {
     
-    public func apiRequest(_ method: HTTPMethod, _ apiURL: String, _ parameters: [String: Any], _ headers: [String: String], completion: @escaping NetworkRouterCompletion) {
+    public func apiRequest(_ method: HTTPMethod, _ apiURL: String, _ parameters: [String: Any], _ queryItem: [URLQueryItem], _ headers: [String: String], completion: @escaping NetworkRouterCompletion) {
         
         /// Create a default configuration
         let defaultSessionConfiguration = URLSessionConfiguration.default
         let defaultSession = URLSession(configuration: defaultSessionConfiguration)
         
         /// Setup the request with URL
-        let urlRequest = createURLRequest(method: method, apiURL: apiURL, parameters: parameters, headers: headers)
+        let urlRequest = createURLRequest(method: method, apiURL: apiURL, parameters: parameters, queryItem, headers: headers)
         
         // Create dataTask
         defaultSession.dataTask(with: urlRequest) { (data, response, error) in
@@ -74,12 +74,18 @@ class NetworkManager: NetworkRouter {
         }.resume()
     }
     
-    private func createURLRequest(method: HTTPMethod, apiURL: String?, parameters: [String: Any]?, headers: [String: String]) -> URLRequest {
+    private func createURLRequest(method: HTTPMethod, apiURL: String?, parameters: [String: Any]?, _ queryItem: [URLQueryItem]?, headers: [String: String]) -> URLRequest {
         
         /// Since source URL contains whitespace in URL, so adding percent encoding to make URL proper.
         guard let url = apiURL?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) else { fatalError() }
+        var components = URLComponents(string: url)
         
-        var request = URLRequest(url: URL(string: url)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 60.0)
+        /// Checking if query parameters exists to append in URL for get params.
+        if let queryItem = queryItem {
+            components?.queryItems = queryItem
+        }
+        
+        var request = URLRequest(url: (components?.url)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 60.0)
         request.httpMethod = method.rawValue
         request.allHTTPHeaderFields = headers
         

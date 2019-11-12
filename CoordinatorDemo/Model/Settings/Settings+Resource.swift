@@ -28,14 +28,14 @@ extension ResultsData {
         
         /// URLQueryItem - is included in api as part of URLComponent. Its normally used in case of get type api in which params is appended in URL.
         var query: [URLQueryItem] = []
-        query.append(URLQueryItem(name:  "query", value: ("\(queryValue)") + "&"))
-        query.append(URLQueryItem(name:  "location", value: "25.5941,85.137&"))
-        query.append(URLQueryItem(name:  "radius", value: ("\(radius)") + "&"))
-        query.append(URLQueryItem(name:  "key", value: ("\(AppConfiguration.default.apiKey)") + "&"))
+        query.append(URLQueryItem(name: "query", value: ("\(queryValue)")))
+        query.append(URLQueryItem(name: "location", value: "25.5941,85.137&"))
+        query.append(URLQueryItem(name: "radius", value: ("\(radius)")))
+        query.append(URLQueryItem(name: "key", value: ("\(AppConfiguration.default.apiKey)")))
 
-        let requestURL = "\(AppConfiguration.default.apiURL)" + "\(query)"
+        let requestURL = "\(AppConfiguration.default.apiURL)"
         
-        NetworkManager().apiRequest(.get, requestURL, [:], [:]) {  (data, statusCode)   in
+        NetworkManager().apiRequest(.get, requestURL, [:], query, [:]) {  (data, statusCode)   in
             do {
                 guard let data = data else { return }
                 let jsonResult = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions.mutableContainers)
