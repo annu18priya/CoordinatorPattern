@@ -1,21 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "18E3FE28-AACA-4E1E-B5F0-5C0993CE1FA6"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "32827D38-9FB3-458A-B8A6-3E1D741F65B7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CoordinatorDemo/TabControllers/Main/MainCoordinator.swift"
-            timestampString = "591877301.128786"
+            filePath = "CoordinatorDemo/Model/Settings/Settings+Resource.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "doNavigation(mainObj:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "fetch(params:queryValue:location:radius:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8D57A5D8-5277-449C-8A69-B005B29FC455"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoordinatorDemo/Model/Settings/Settings+Resource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "fetch(params:queryValue:location:radius:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

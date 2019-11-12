@@ -11,6 +11,7 @@
 		15127BD2233C9E5E0079C22C /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15127BD1233C9E5E0079C22C /* Tabbar.storyboard */; };
 		15127BD4233CB2C10079C22C /* MainTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15127BD3233CB2C10079C22C /* MainTabCoordinator.swift */; };
 		154B19A62341DC5E004EE5E8 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154B19A52341DC5E004EE5E8 /* LocalStorage.swift */; };
+		154BB735237AD24700227D24 /* SettingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BB734237AD24700227D24 /* SettingsTest.swift */; };
 		156938CF2345D48B006462DA /* medical.json in Resources */ = {isa = PBXBuildFile; fileRef = 156938CE2345D48B006462DA /* medical.json */; };
 		156938D32345D514006462DA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156938D22345D514006462DA /* Network.swift */; };
 		156938D52345D9D6006462DA /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156938D42345D9D6006462DA /* NetworkMethod.swift */; };
@@ -57,6 +58,7 @@
 		15127BD1233C9E5E0079C22C /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
 		15127BD3233CB2C10079C22C /* MainTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabCoordinator.swift; sourceTree = "<group>"; };
 		154B19A52341DC5E004EE5E8 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		154BB734237AD24700227D24 /* SettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTest.swift; sourceTree = "<group>"; };
 		156938CE2345D48B006462DA /* medical.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = medical.json; sourceTree = "<group>"; };
 		156938D22345D514006462DA /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		156938D42345D9D6006462DA /* NetworkMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				157C9E592339E982007441F8 /* CoordinatorDemoTests.swift */,
+				154BB734237AD24700227D24 /* SettingsTest.swift */,
 				157C9E5B2339E982007441F8 /* Info.plist */,
 			);
 			path = CoordinatorDemoTests;
@@ -469,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				154BB735237AD24700227D24 /* SettingsTest.swift in Sources */,
 				157C9E5A2339E982007441F8 /* CoordinatorDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
